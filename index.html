@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Day Planner</title>
+  <style>
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+  
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: steelblue;
+  color: white;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+}
+
+.description {
+  white-space: pre-wrap;
+  
+}
+
+.time-block {
+  text-align: center;
+  border-radius: 15px;
+}
+
+.row {
+  white-space: pre-wrap;
+  border-top: 1px solid white;
+  ;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+
+}
+
+.past {
+  background-color:burlywood;
+  color: white;
+}
+
+.present {
+  background-color:coral;
+  color: white;
+}
+
+.future {
+  background-color:lightseagreen;
+  color: white;
+}
+
+.btn{
+  margin-left: 50%;
+  color:#fff;
+}
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color:steelblue;
+  color: white;
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <nav class="jumbotron jumbotron-fluid head">
+    <h1 class="display-4 text-center">Day Scheduler</h1>
+    <p class="lead text-center">A simple calendar app for scheduling your work day</p>
+    <button class="btn btn-warning" style="margin-bottom:1em" id="clearBtn">Clear</button>
+    <p id ="date"></p>
+  </nav>
+  <div class="container main">
+    <div class='row time-block'>
+      <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        9am
+      </div>
+      <textarea class=" col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='9' id='div9'></textarea>
+      <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn9">Save</button>
+    </div>
+    <div class='row time-block'>
+      <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        10am
+      </div>
+      <textarea class=" col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='10' id="div10"></textarea>
+      <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn10">Save</button>
+  
+    </div>
+    <div class='row time-block'>
+      <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        11am
+      </div>
+      <textarea class=" col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='11' id="div11"></textarea>
+      <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn11">Save</button>
+  
+    </div>
+    <div class='row time-block'>
+      <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        12am
+      </div>
+      <textarea class=" col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='12' id="div12"></textarea>
+      <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn12">Save</button>
+  
+    </div>
+    <div class='row time-block'>
+      <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        1pm
+      </div>
+      <textarea class=" col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='13' id="div1"></textarea>
+      <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn1">Save</button>
+  
+    </div>
+    <div class='row time-block'>
+      <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        2pm
+      </div>
+      <textarea class=" col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='14' id="div2"></textarea>
+      <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn2">Save</button>
+  
+    </div>
+    <div class='row time-block'>
+      <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        3pm
+      </div>
+      <textarea class=" col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='15' id="div3"></textarea>
+      <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn3">Save</button>
+  
+    </div>
+    <div class='row time-block'>
+      <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        4pm
+      </div>
+      <textarea class=" col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='16' id="div4"></textarea>
+      <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn4">Save</button>
+  
+    </div>
+    <div class='row time-block'>
+      <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        5pm
+      </div>
+      <textarea class=" col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='17' id="div5"></textarea>
+      <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn5">Save</button>
+  
+    </div>
+  
+  </div>
+  
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script>
+   
+   //Today's date with Current time with zone.
+     var date= new Date()
+     document.getElementById('date').innerHTML = date;
+    
+    //getting the data for each textarea from local storage
+    document.getElementById('div9').textContent = localStorage.getItem('div9')
+    document.getElementById('div10').textContent = localStorage.getItem('div10')
+    document.getElementById('div11').textContent = localStorage.getItem('div11')
+    document.getElementById('div12').textContent = localStorage.getItem('div12')
+     document.getElementById('div1').textContent = localStorage.getItem('div1')
+     document.getElementById('div2').textContent = localStorage.getItem('div2')
+     document.getElementById('div3').textContent = localStorage.getItem('div3')
+     document.getElementById('div4').textContent = localStorage.getItem('div4')
+     document.getElementById('div5').textContent = localStorage.getItem('div5')
+
+     //With each click button the data is going to save to the local storage from textarea
+    
+    document.getElementById('btn9').addEventListener('click', event => {
+      localStorage.setItem('div9', document.getElementById('div9').value)
+      document.getElementById('div9').textContent = document.getElementById('div9').value
+      
+    })
+
+    document.getElementById('btn10').addEventListener('click', event => {
+        localStorage.setItem('div10', document.getElementById('div10').value)
+        document.getElementById('div10').textContent = document.getElementById('div10').value
+        
+      })
+
+   document.getElementById('btn11').addEventListener('click', event => {
+      localStorage.setItem('div11', document.getElementById('div11').value)
+      document.getElementById('div11').textContent = document.getElementById('div11').value
+      
+    })
+
+
+    document.getElementById('btn12').addEventListener('click', event => {
+        localStorage.setItem('div12', document.getElementById('div12').value)
+        document.getElementById('div12').textContent = document.getElementById('div12').value
+        
+      })
+
+      document.getElementById('btn1').addEventListener('click', event => {
+          localStorage.setItem('div1', document.getElementById('div1').value)
+          document.getElementById('div1').textContent = document.getElementById('div1').value
+          
+        })
+
+     document.getElementById('btn2').addEventListener('click', event => {
+        localStorage.setItem('div2', document.getElementById('div2').value)
+        document.getElementById('div2').textContent = document.getElementById('div2').value
+        
+      })
+
+      document.getElementById('btn3').addEventListener('click', event => {
+          localStorage.setItem('div3', document.getElementById('div3').value)
+          document.getElementById('div3').textContent = document.getElementById('div3').value
+         
+        })
+
+      document.getElementById('btn4').addEventListener('click', event => {
+        localStorage.setItem('div4', document.getElementById('div4').value)
+        document.getElementById('div4').textContent = document.getElementById('div4').value
+       
+          })
+
+        document.getElementById('btn5').addEventListener('click', event => {
+        localStorage.setItem('div5', document.getElementById('div5').value)
+        document.getElementById('div5').textContent = document.getElementById('div5').value
+             
+            })
+
+
+            //Displaying current time, past time and future time with color coded
+       let timeBlock=  document.getElementsByClassName('time-block')
+       for (let i = 0; i < timeBlock.length; i++) {
+        let textarea = timeBlock.item(i).childNodes[3]
+
+      
+
+      let hour= +textarea.dataset.hour  //+ meaning parse here
+       
+       let current = moment().hours()
+
+       console.log(current,hour)
+         if(hour< current){
+         
+         textarea.classList.add('past')
+         textarea.classList.remove('present')
+         textarea.classList.remove('future')
+         }
+
+         else if (hour === current) {
+
+          textarea.classList.add('present')
+          textarea.classList.remove('past')
+           textarea.classList.remove('future')
+         }
+         else if (hour >current) {
+
+          textarea.classList.add('future')
+          textarea.classList.remove('present')
+          textarea.classList.remove('past')
+
+         }
+
+
+         }
+
+         //clear the inputs from the textarea.
+          document.getElementById('clearBtn').addEventListener('click', event => {
+          document.getElementById('div9').value = ''
+          document.getElementById('div10').value = ''
+          document.getElementById('div11').value = ''
+          document.getElementById('div12').value = ''
+          document.getElementById('div1').value = ''
+          document.getElementById('div2').value = ''
+          document.getElementById('div3').value = ''
+          document.getElementById('div4').value = ''
+          document.getElementById('div5').value = ''
+
+         })
+
+
+
+  </script>
+  
+</body>
+</html>
